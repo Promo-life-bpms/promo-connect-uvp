@@ -53,7 +53,7 @@
         </button>
     </div>
     <div class="container mx-auto max-w-7xl">
-        <div class="w-full bg-[#002A4C]">
+        <div class="w-full bg-[#0F0E24]">
             <div class="container mx-auto max-w-7xl py-1">
                 <div class="flex justify-center">
                     <span class="text-center text-white">PRODUCTOS MAS VENDIDOS
@@ -71,7 +71,7 @@
                     @endforeach
                  </div>
         </div>
-        <div class="w-full bg-[#002A4C]">
+        <div class="w-full bg-[#0F0E24]">
             <div class="container mx-auto max-w-7xl py-1">
                 <div class="flex justify-center">
                     <span class="text-center text-white">CATEGORIAS
@@ -84,9 +84,9 @@
                 @foreach ($latestCategorias as $cat)
                     <div>
                         <div
-                            class="border border-[#0047BB]  bg-slate-50 hover:bg-slate-100 transition-colors rounded-full shadow-lg w-40 h-40 flex justify-center items-center text-center cursor-pointer">
+                            class="border border-[#FECB2E]  bg-slate-50 hover:bg-slate-100 transition-colors rounded-full shadow-lg w-40 h-40 flex justify-center items-center text-center cursor-pointer">
                             <a href="{{ route('categoryfilter', ['category' => $cat->id]) }}"
-                                class="bg-[#161B2F] font-bold text-white uppercase text-sm px-3 py-2 w-4/5">
+                                class="bg-[#FECB2E] font-bold text-black uppercase text-sm px-3 py-2 w-4/5">
                                 {{ $cat->family }}
                             </a>
                         </div>
@@ -94,7 +94,7 @@
                 @endforeach
             </div>
         </div>
-        <div class="w-full bg-[#002A4C]">
+        <div class="w-full bg-[#0F0E24]">
             <div class="container mx-auto max-w-7xl py-1">
                 <div class="flex justify-center">
                     <span class="text-center text-white">MAS PRODUCTOS

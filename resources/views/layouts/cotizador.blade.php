@@ -30,38 +30,14 @@
         <div class="w-full bg-white">
             @include('layouts.components.navbar')
         </div>
-        <div class="flex-grow w-full mt-40">
+        <div class="flex-grow w-full" style="margin-top:102px;">
             @yield('content')
         </div>
-        <div class="py-5 w-full bg-[#002A4C] ">
+        <div class="py-5 w-full bg-[#0F0E24] ">
             
-            <div class="flex flex-wrap">
-                <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 text-white">
-                    
-                    <p class="ml-40 mt-10">Contáctanos</p>
-                    <p class="ml-40 mt-4">Quienes somos</p>
-                    <p class="ml-40 mt-4 mb-20">Documentos</p>
-                   
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 text-white">
-                    <p class="ml-40 mt-10">Acuerdos comerciales</p>
-                    <p class="ml-40 mt-4">Lista de precios</p>
-                    <p class="ml-40 mt-4 mb-20">Manual de pagos</p>
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 text-white  items-center justify-center">
-                    <p class="ml-40 mt-10">Manual de sistema</p>
-                    <p class="ml-40 mt-4">Hojas de seguridad</p>
-                    <p class="ml-40 mt-4 mb-20">Fichas técnicas</p>  
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/4 lg:w-1/4 xl:w-1/4 text-white items-center justify-center">
-                    <p class="ml-40 mt-10">Términos y condiciones</p>
-                    <p class="ml-40 mt-5">Aviso de privacidad</p>
-                </div>
-            </div>
 
-            <div class="w-full bg-sky-900 mt-10" style="height:0.2px;"></div>
             <div class="w-full flex items-center justify-center text-white mt-4">
-                <p>© 2023 GProcura. All Rights Reserved.  </p>
+                <p>© 2023 Promolife. All Rights Reserved.  </p>
             </div>
 
             <!-- <div

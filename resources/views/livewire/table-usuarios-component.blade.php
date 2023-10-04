@@ -67,7 +67,7 @@
                                 </td>
                                 <td class="">
                                     <a href="/seller/compradores/{{ $user->id }}">
-                                        <button class="bg-[#2B2D2F] text-white h-[50px] w-full px-1">VER
+                                        <button class="bg-[#EDBA04] hover:bg-[#F79C19] text-white h-[50px] w-full px-1 font-bold">VER
                                             PEDIDOS</button>
                                     </a>
                                 </td>

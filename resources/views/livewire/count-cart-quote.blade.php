@@ -1,5 +1,5 @@
 <div>
-    <a class="cart-icon nav-link text-white hover:text-[#009CDE] " aria-current="page" href="{{ route('cotizacion') }}" data-toggle="tooltip"
+    <a class="cart-icon nav-link text-white hover:text-[#EDBA04] " aria-current="page" href="{{ route('cotizacion') }}" data-toggle="tooltip"
         data-placement="bottom" title="Cotizacion Actual" >
         <div style="margin-top:-8px;" class="ml-2 mr-2">
             @if ($total > 0)

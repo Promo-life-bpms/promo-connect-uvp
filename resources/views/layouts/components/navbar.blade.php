@@ -1,8 +1,8 @@
 <div  class="fixed top-0 left-0 right-0 z-50">
-    <nav class="w-full flex justify-between py-2 items-center flex-wrap md:flex-nowrap px-3 md:py-1 bg-[#002A4C]" >
+    <nav class="w-full flex justify-between py-2 px-12 items-center flex-wrap md:flex-nowrap px-3 md:py-1 bg-[#0F0E24]" >
         <div class="w-2/12">
             <a href="{{ route('index') }}">
-                <img src="{{asset('img/gprocura_logo.png')}}"
+                <img src="{{asset('img/logo_uvp.png')}}"
                     style="object-fit: contain;"
                     alt="logo" class="w-80 p-6 ml-12">
             </a>
@@ -49,70 +49,47 @@
         </div>
 
 
-        <div class="w-2/12">
-            <button id="dropdownHoverButton" data-dropdown-toggle="dropdown1"
-                class="text-stone-50 hover:text-[#009CDE] focus:ring-4 focus:outline-none p-1 font-medium focus:rounded text-lg text-center inline-flex items-center border border-white"
-                type="button">
-                <p class="text-md ml-3 mt-1 mb-1">ESTACIÓN</p>
-                <svg class="w-4 h-4 ml-2 mr-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-        </div>
+        <div class="w-8/12">
+            <div class="flex justify-end pr-10 ">
 
-        <div id="dropdown1"
-            class="z-40 hidden bg-[#002A4C] divide-y divide-gray-100 rounded-lg shadow w-44 text-white hover:text-[#009CDE]">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-                
-                <!--  <li>
-                    <a href="{{ config('settings.url_home_g500') }}"
-                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Estanciones</a>
-                </li> -->
-
-            </ul>
-        </div>
-    </nav>
-   
-    <div class="w-full bg-white h-14 flex justify-between p-2 bg-stone-50">
-
-        @livewire('menu-categories')
-        <div></div>
-        
-        <div class="flex justify-between pr-10 ">
+                <div>
+                    @if (!request()->is('administrador/*', 'administrador'))
+                        @role(['buyers-manager', 'buyer'])
+                            <div class="w-3/12 sm:w-5/12">
+                                @livewire('searching-component')
+                            </div>
+                        @endrole
+                    @endif
+                </div>
 
             <div>
-                @if (!request()->is('administrador/*', 'administrador'))
-                    @role(['buyers-manager', 'buyer'])
-                        <div class="w-3/12 sm:w-5/12">
-                            @livewire('searching-component')
-                        </div>
-                    @endrole
-                @endif
-            </div>
-
-            <div>
-            <div class="flex w-fit">
+            <div class="flex items-start justify-end">
 
                 <div class="flex justify-between sm:justify-end gap-5 font-semibold text-md items-center mt-3 sm:mt-0">
+
                     @role('seller')
-                        <ul
-                            class="flex flex-wrap text-black hover:text-[#009CDE] focus:ring-4 focus:outline-none focus:ring-gray-100 p-1 font-medium focus:rounded text-sm text-center inline-flex items-center">
+                        <ul class="flex ">
+                            <li>
+                                <a href="{{ route('seller.content') }}"
+                                    class="block px-4 py-2 text-white hover:text-[#EDBA04] text-lg">Banners</a>
+                            </li>
                             <li>
                                 <a href="{{ route('seller.compradores') }}"
-                                    class="block px-4 py-2 text-lg text-black hover:text-[#009CDE]">Compradores</a>
+                                    class="block px-4 py-2 text-lg text-white hover:text-[#EDBA04]">Compradores</a>
                             </li>
                             <li>
                                 <a href="{{ route('seller.pedidos') }}"
-                                    class="block px-4 py-2 text-black hover:text-[#009CDE] text-lg">Compras</a>
+                                    class="block px-4 py-2 text-white hover:text-[#EDBA04] text-lg">Compras</a>
                             </li>
                             <li>
                                 <a href="{{ route('seller.muestras') }}"
-                                    class="block px-4 py-2 text-black hover:text-[#009CDE] text-lg">Muestras</a>
+                                    class="block px-4 py-2 text-white hover:text-[#EDBA04] text-lg">Muestras</a>
                             </li>
+                           
 
                         </ul>
                     @endrole
+
                     <div class="relative inline-flex w-fit">
 
                         <a class="relative inline-flex items-center text-gray-500">
@@ -259,42 +236,43 @@
 
                     <!-- Dropdown menu -->
                     <div id="dropdown"
-                        class="z-40 hidden bg-[#002A4C] divide-y divide-gray-100 rounded-lg shadow w-44 text-white hover:text-[#009CDE]">
+                        class="z-40 hidden bg-[#0F0E24] divide-y divide-gray-100 rounded-lg shadow w-44 text-white hover:text-[#0F0E24]">
                         <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                             @role('buyers-manager')
                                 <li>
                                     <a href="{{ route('administrador') }}"
-                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Administrador</a>
+                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#0F0E24] hover:bg-white">Administrador</a>
                                 </li>
                             @endrole
                             @role('seller')
                                 {{-- <li>
                                     <a href="{{ route('seller.content') }}"
-                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Contenido</a>
+                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#0F0E24] hover:bg-white">Contenido</a>
                                 </li> --}}
                             @endrole
                             @role('admin')
                                 <li>
                                     <a href="{{ route('admin.dashboard') }}"
-                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Administrador</a>
+                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#0F0E24] hover:bg-white">Administrador</a>
                                 </li>
                             @endrole
                             @role(['buyers-manager', 'buyer'])
                                 <li>
                                     <a href="{{ route('compras') }}"
-                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Mis
+                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#0F0E24] hover:bg-white">Mis
                                         Compras</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('muestras') }}"
-                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Mis
+                                        class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#0F0E24] hover:bg-white">Mis
                                         Muestras</a>
                                 </li>
                             @endrole
 
                             <li>
-                                <a href="{{ config('settings.url_home_g500') }}"
-                                    class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#009CDE] hover:bg-white">Ir a G500</a>
+                                <button data-modal-target="popup-modal" data-modal-toggle="popup-modal"
+                                    class="w-full text-left text-base block px-4 py-2 text-white hover:text-[#000000] hover:bg-white">Cerrar
+                                    Sesion</button>
                             </li>
 
                         </ul>
@@ -302,7 +280,7 @@
                 </div>
 
                 <button id="dropdownHoverButton" data-dropdown-toggle="dropdown"
-                    class="text-white hover:text-[#009CDE] focus:ring-4 focus:outline-none p-1 font-medium focus:rounded text-lg text-center inline-flex items-center"
+                    class="text-white hover:text-[#EDBA04] focus:ring-4 focus:outline-none p-1 font-medium focus:rounded text-lg text-center inline-flex items-center"
                     type="button">
                     <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="6" r="4" fill="#1C274C"/>
@@ -311,7 +289,7 @@
                 </button>
                 
                 @role(['buyers-manager', 'buyer'])
-                    <a class="text-white hover:text-[#009CDE]" href="{{ route('catalogo') }}">
+                    <a class="text-white hover:text-[#EDBA04]" href="{{ route('catalogo') }}">
                         <div class="mt-1">
                             <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25013 6.01489C8.25003 6.00994 8.24998 6.00498 8.24998 6V5C8.24998 2.92893 9.92892 1.25 12 1.25C14.0711 1.25 15.75 2.92893 15.75 5V6C15.75 6.00498 15.7499 6.00994 15.7498 6.01489C17.0371 6.05353 17.8248 6.1924 18.4261 6.69147C19.2593 7.38295 19.4787 8.55339 19.9177 10.8943L20.6677 14.8943C21.2849 18.186 21.5934 19.8318 20.6937 20.9159C19.794 22 18.1195 22 14.7704 22H9.22954C5.88048 22 4.20595 22 3.30624 20.9159C2.40652 19.8318 2.71512 18.186 3.33231 14.8943L4.08231 10.8943C4.52122 8.55339 4.74068 7.38295 5.57386 6.69147C6.17521 6.1924 6.96287 6.05353 8.25013 6.01489ZM9.74998 5C9.74998 3.75736 10.7573 2.75 12 2.75C13.2426 2.75 14.25 3.75736 14.25 5V6C14.25 5.99999 14.25 6.00001 14.25 6C14.1747 5.99998 14.0982 6 14.0204 6H9.97954C9.90176 6 9.82525 6 9.74998 6.00002C9.74998 6.00002 9.74998 6.00003 9.74998 6.00002V5Z" fill="#1C274C"/>
@@ -323,15 +301,20 @@
                     </div>
                 @endrole
                 @role('seller')
-                    @livewire('count-messages-support')
+                    <div class=" mt-2 ml-2" style="width: 2rem">
+                        @livewire('count-messages-support')
+                    </div>
                 @endrole
 
                 </div>
             </div>
-            
 
+
+            </div>
         </div>
-
-    </div>    
+       
+    </nav>
+   
+       
 
 </div>

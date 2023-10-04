@@ -129,7 +129,7 @@
                                         {{ $priceProduct }}</p>
                                 </div>
                                 <a href="{{ route('show.product', ['product' => $row->id]) }}"
-                                    class="block w-full bg-[#0047BB]  hover:bg-[#009CDE]  text-white text-center rounded-sm font-semibold py-2 rounded-xl">
+                                    class="block w-full bg-[#FECB2E] hover:bg-[#F79C19] text-black text-center rounded-sm font-semibold py-2 rounded-xl">
                                     Cotizar
                                 </a>
                             </div>

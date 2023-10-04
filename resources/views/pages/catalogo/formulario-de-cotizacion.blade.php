@@ -204,20 +204,14 @@
 
                                     <div class="flex">
                                         <div class="flex-1 w-50 bg-stone-300 p-2 mr-2 cursor-pointer" id="logo1">
-                                            <img src="{{asset('img/logo_blue.png')}}" alt="logo" class="w-30" id="">
+                                            <img src="{{asset('img/logo_uvp.png')}}" alt="logo" class="w-30" id="">
                                         </div>
                                         <div class="flex-1 w-50 bg-stone-300 p-2 cursor-pointer" id="logo2">
-                                            <img src="{{asset('img/logo.png')}}" alt="logo" class="w-30">
+                                            <img src="{{asset('img/logo_uvp_black.png')}}" alt="logo" class="w-30">
                                         </div>
                                     </div>
                                     
-                                    <div class="flex mt-2" >
-                                        <div class="flex-1 w-50 h-10 bg-stone-300 p-2 mr-2 cursor-pointer flex items-center justify-center" id="logo3">
-                                            <img src="{{asset('img/logo_G5.png')}}" alt="logo" class="w-30 h-8 object-contain" id="">
-                                        </div>
-                                        <div class="flex-1 w-50">
-                                        </div>
-                                    </div>
+                                   <br>
                                     
                                     <input type="file"
                                         class="block w-full text-sm text-slate-500 bg-violet-50
@@ -262,7 +256,7 @@
                                                 wire:model="photo" accept="image/*" onchange="fileUploaded()" id="fileInput">
                                                 <div class="text-xs m-1" id="statusIcon"></div> -->
 
-                                        <button class="w-full bg-[#0047BB] hover:bg-[#009CDE] text-white py-2 px-4 rounded" id="sendImageToBackend">GUARDAR</button>
+                                        <button class="w-full bg-[#FECB2E] hover:bg-[#F79C19] text-black py-2 px-4 rounded" id="sendImageToBackend">GUARDAR</button>
                                         <p class="inline-block cursor-pointer transition duration-300 ease-in-out text-green-600 text-sm" id="savedText" style="display:none;">Imagen guardada, ya puedes cerrar esta ventana</p>
                                         <p class="inline-block cursor-pointer transition duration-300 ease-in-out text-red-600 text-sm" id="errorText" style="display:none;">Ocurrio un error al guardar la imagen, intenta nuevamente</p>
 
@@ -328,7 +322,7 @@
             @endif
         </div>
 
-        <button class=" bg-[#0047BB]  hover:bg-[#009CDE] py-3 text-stone-50 col-span-4" wire:click="agregarCarrito()">
+        <button class="bg-[#FECB2E] hover:bg-[#F79C19] text-black py-3 col-span-4" wire:click="agregarCarrito()">
             Agregar al carrito
         </button>
         @if (session()->has('message'))
@@ -388,9 +382,8 @@
        /*  Obtener de path de imagenes */
         var imageURL = "{{ $product->images != '[]'?  $product->images[0]->image_url : '' }}";
         var productID = "{{ $product->id }}";
-        var logo1 = "{{asset('img/logo_blue.png')}}";
-        var logo2 = "{{asset('img/logo.png')}}";
-        var logo3 = "{{asset('img/logo_G5.png')}}";
+        var logo1 = "{{asset('img/logo_uvp.png')}}";
+        var logo2 = "{{asset('img/logo_uvp_black.png')}}";
         if(imageURL.startsWith("https://catalogodeproductos.promolife.lat/")){
             imageURL = imageURL.slice(41);
         }
